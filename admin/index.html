@@ -101,6 +101,9 @@
                 </table>
                 <h1 class="text-danger text-center bg-success">Tore maayi ke chod </h1>
             </div>
+            <div class="col-12 load-freinds no-data ">
+                <h1 class="text-danger ">Table not found</h1>
+            </div>
         </div>
     </div>
 
@@ -116,10 +119,16 @@
                     $('.load-freinds').hide();
                     $('.shah').show();
                 }else if(freinds=="bhadwa"){
+                    $('.load-freinds').hide();
                     $('.load-freinds').show();
+                    $('.no-data').hide();
                 }else if(freinds=="osama"){
                     $('.load-freinds').hide();
                     $('.osama').show();
+                    
+                } else{
+                    $('.load-freinds').hide();
+                    $('.no-data').show();
                 }
             });
         });
