@@ -10,7 +10,14 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12">
+                <label for="name">Name</label>
+                <input type="text" class="form-control name" id="name" placeholder="Please enter name">
+                <button class="btn btn-primary form-control name-btn">Find</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 load-freinds shah">
                 <h2 class="text-primary text-center">Table data by shahnawaz</h2>
                 <table class="table">
                     <thead>
@@ -52,7 +59,7 @@
                 </table>
                 <h1 class="text-danger text-center bg-primary">Tore maayi ke chodo </h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 load-freinds osama">
                 <h2 class="text-primary text-center">Table data by Smart boy</h2>
                 <table class="table table-bordered table-hover table-striped table-condensed">
                     <thead>
@@ -97,9 +104,25 @@
         </div>
     </div>
 
-
-
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.load-freinds').hide();
+
+            $('.name-btn').on('click', function(){                    
+                var freinds = $('#name').val();
+                if(freinds=="shah"){
+                    $('.load-freinds').hide();
+                    $('.shah').show();
+                }else if(freinds=="bhadwa"){
+                    $('.load-freinds').show();
+                }else if(freinds=="osama"){
+                    $('.load-freinds').hide();
+                    $('.osama').show();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
