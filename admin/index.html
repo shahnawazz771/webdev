@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 load-freinds shah">
+            <div class="col-md-12 load-freinds shah">
                 <h2 class="text-primary text-center">Table data by shahnawaz</h2>
                 <table class="table">
                     <thead>
@@ -59,7 +59,7 @@
                 </table>
                 <h1 class="text-danger text-center bg-primary">Tore maayi ke chodo </h1>
             </div>
-            <div class="col-md-6 load-freinds osama">
+            <div class="col-md-12 load-freinds osama">
                 <h2 class="text-primary text-center">Table data by Smart boy</h2>
                 <table class="table table-bordered table-hover table-striped table-condensed">
                     <thead>
@@ -101,6 +101,10 @@
                 </table>
                 <h1 class="text-danger text-center bg-success">Tore maayi ke chod </h1>
             </div>
+            <div class="col-md-12 load-freinds no-data">
+                <!-- <h2 class="text-primary text-center">Table data by Smart boy</h2> -->
+                <h1 class="text-danger text-center bg-success">nahi aaya data </h1>
+            </div>
         </div>
     </div>
 
@@ -112,14 +116,22 @@
 
             $('.name-btn').on('click', function(){                    
                 var freinds = $('#name').val();
+                $('.message-box').remove();
                 if(freinds=="shah"){
                     $('.load-freinds').hide();
                     $('.shah').show();
                 }else if(freinds=="bhadwa"){
+                    $('.load-freinds').hide();
                     $('.load-freinds').show();
+                    $('.no-data').hide();
                 }else if(freinds=="osama"){
                     $('.load-freinds').hide();
                     $('.osama').show();
+                }else if(freinds==""){
+                    $('.name').after('<p class="text-danger message-box">Invalid data</p>');
+                }else{
+                    $('.load-freinds').hide();
+                    $('.no-data').show();
                 }
             });
         });
