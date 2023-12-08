@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 load-freinds shah">
+            <div class="col-md-6 load-freinds shah">
                 <h2 class="text-primary text-center">Table data by shahnawaz</h2>
                 <table class="table">
                     <thead>
@@ -53,14 +53,14 @@
                             <td>From Azim</td>
                             <td>9000</td>
                             <td>car lena tha</td>
-                            <td>wapas nahi hota hai</td>
+                            <td>Work_Done</td>
                         </tr>
                     </tbody>
                 </table>
-                <h1 class="text-danger text-center bg-primary">Tore maayi ke chodo </h1>
+                <h1 class="text-danger text-center bg-primary">Earn First </h1>
             </div>
-            <div class="col-md-12 load-freinds osama">
-                <h2 class="text-primary text-center">Table data by Smart boy</h2>
+            <div class="col-md-6 load-freinds osama">
+                <h2 class="text-primary text-center">Due Amount Form Friend</h2>
                 <table class="table table-bordered table-hover table-striped table-condensed">
                     <thead>
                         <tr>
@@ -99,16 +99,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <h1 class="text-danger text-center bg-success">Tore maayi ke chod </h1>
+                <h1 class="text-danger text-center bg-success">Error Come </h1>
             </div>
-<<<<<<< HEAD
             <div class="col-12 load-freinds no-data ">
-                <h1 class="text-danger ">Table not found</h1>
-=======
-            <div class="col-md-12 load-freinds no-data">
-                <!-- <h2 class="text-primary text-center">Table data by Smart boy</h2> -->
-                <h1 class="text-danger text-center bg-success">nahi aaya data </h1>
->>>>>>> 37422cd40367f11ea02b03c5bf4750ad45c6fe0a
+                <h1 class="text-danger ">404 not found</h1>
             </div>
         </div>
     </div>
@@ -121,7 +115,6 @@
 
             $('.name-btn').on('click', function(){                    
                 var freinds = $('#name').val();
-                $('.message-box').remove();
                 if(freinds=="shah"){
                     $('.load-freinds').hide();
                     $('.shah').show();
@@ -132,14 +125,8 @@
                 }else if(freinds=="osama"){
                     $('.load-freinds').hide();
                     $('.osama').show();
-<<<<<<< HEAD
                     
                 } else{
-=======
-                }else if(freinds==""){
-                    $('.name').after('<p class="text-danger message-box">Invalid data</p>');
-                }else{
->>>>>>> 37422cd40367f11ea02b03c5bf4750ad45c6fe0a
                     $('.load-freinds').hide();
                     $('.no-data').show();
                 }
