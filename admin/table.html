@@ -19,8 +19,11 @@
 				<ul class="nav nav-pills nav-justified">
 					<li><a class="table-header" id="response-table-normal" href="#">Table</a></li>
 					<li><a class="table-header" id="response-table-stripped" href="#">Table Stripped</a></li>
-					<li><a class="table-header" id="response-table-dark" href="#">Table Bordered</a></li>
+					<li><a class="table-header" id="response-table-bordered" href="#">Table Bordered</a></li>
 					<li><a class="table-header" id="response-table-hover" href="#">Table Hover</a></li>
+					<li><a class="table-header" id="response-table-condensed" href="#">Table Condensed</a></li>
+					<li><a class="table-header" id="response-table-responsive" href="#">Table Responsive</a></li>
+					<li><a class="table-header" id="table-all" href="#">Table All</a></li>
 				</ul>
 			</div>
 		</div>
@@ -91,8 +94,8 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-sm-4 table-data response-table-hover">
-				<h1>Table hover</h1>
+			<div class="col-sm-4 table-data response-table-bordered">
+				<h1>Table Bordered</h1>
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -124,7 +127,105 @@
 					</tbody>
 				</table>
 			</div>
-			
+			<div class="col-sm-4 table-data response-table-hover">
+				<h1>Table Hover</h1>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-4 table-data response-table-condensed">
+				<h1>Table Condensed</h1>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-4 table-data response-table-responsive">
+				<h1>Table Responsive</h1>
+				<table class="table table-responsive">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -134,24 +235,59 @@
 		// to start jquery & write here
 		$(document).ready(function(){
 			// on click event will start for a perticular buttons
-
+			var first = "osama";
+			var last = "diwan";
+				
+			console.log(first+' '+last);
 			$('.table-header').click(function(){
 				// take inout from attribute in a variable
 				var response = $(this).attr("id");
-
 				// remove active class from nav
 				$('.nav li').removeClass('active');
 				// add active class on current button
 				$(this).parent().addClass('active');
 
 				// condition will start from here to activate table
-				if(response=="response-table-normal"){
+
+				if(response=="table-all"){
+					$('.table-data').removeClass('col-sm-12');
+					$('.table-data').addClass('col-sm-4');
+					$('.table-data').show();
+				}else{
 					$('.table-data').hide();
-					$('.response-table-normal').show();
-				}else if(response=="response-table-stripped"){
-					$('.table-data').hide();
-					$('.response-table-stripped').show();
+					$('.'+response).removeClass('col-sm-4');
+					$('.'+response).addClass('col-sm-12');
+					$('.'+response).show();
 				}
+				// if(response=="response-table-normal"){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-normal').show();
+				// 	$('.response-table-normal').removeClass('col-sm-4');
+				// 	$('.response-table-normal').addClass('col-sm-12');
+				// }else if(response=="response-table-stripped"){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-stripped').show();
+				// 	$('.response-table-normal').removeClass('col-sm-4');
+				// 	$('.response-table-normal').addClass('col-sm-12');
+				// }else if(response=="response-table-bordered"){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-bordered').show();
+				// 	$('.response-table-normal').removeClass('col-sm-4');
+				// 	$('.response-table-normal').addClass('col-sm-12');
+				// }else if(response=='response-table-hover'){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-hover').show();
+				// }else if(response=='response-table-condensed'){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-condensed').show();
+				// }else if(response=='response-table-responsive'){
+				// 	$('.table-data').hide();
+				// 	$('.response-table-responsive').show();
+				// }else {
+				// 	$('.table-data').removeClass('col-sm-12');
+				// 	$('.table-data').addClass('col-sm-4');
+				// 	$('.table-data').show();
+				// }
 			});
 		});
 	</script>
