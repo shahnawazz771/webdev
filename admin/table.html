@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Table</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.table-data{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center bg-primary">Table</h1>
+				<ul class="nav nav-pills nav-justified">
+					<li><a class="table-header" id="response-table-normal" href="#">Table</a></li>
+					<li><a class="table-header" id="response-table-stripped" href="#">Table Stripped</a></li>
+					<li><a class="table-header" id="response-table-dark" href="#">Table Bordered</a></li>
+					<li><a class="table-header" id="response-table-hover" href="#">Table Hover</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 table-data response-table-normal">
+				<h1>Table</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-4 table-data response-table-stripped">
+				<h1>Table Stripped</h1>
+				<table class="table table-stripped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-4 table-data response-table-hover">
+				<h1>Table hover</h1>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Handle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- for start script -->
+	<script>
+		// to start jquery & write here
+		$(document).ready(function(){
+			// on click event will start for a perticular buttons
+
+			$('.table-header').click(function(){
+				// take inout from attribute in a variable
+				var response = $(this).attr("id");
+
+				// remove active class from nav
+				$('.nav li').removeClass('active');
+				// add active class on current button
+				$(this).parent().addClass('active');
+
+				// condition will start from here to activate table
+				if(response=="response-table-normal"){
+					$('.table-data').hide();
+					$('.response-table-normal').show();
+				}else if(response=="response-table-stripped"){
+					$('.table-data').hide();
+					$('.response-table-stripped').show();
+				}
+			});
+		});
+	</script>
+</body>
+</html>
